@@ -10,8 +10,8 @@ import java.util.List;
  * Time: 7:11 PM
  * To change this template use File | Settings | File Templates.
  */
-public class Deck {
-    private List<Card> cards;
+public abstract class Deck {
+    protected List<Card> cards;
 
     public Deck() {
         this.cards = new ArrayList<Card>();
@@ -20,4 +20,6 @@ public class Deck {
     public int size() {
         return cards.size();
     }
+
+    public abstract void prepareDeck();
 }

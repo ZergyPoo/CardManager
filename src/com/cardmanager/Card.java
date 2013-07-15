@@ -1,5 +1,8 @@
 package com.cardmanager;
 
+import java.util.HashMap;
+import java.util.Map;
+
 /**
  * Created with IntelliJ IDEA.
  * User: sudha_000
@@ -13,6 +16,17 @@ public class Card {
     public static final String SUIT_HEARTS = "Hearts";
     public static final String SUIT_DIAMONDS = "Diamonds";
     public static final String SUIT_SPADES = "Spades";
+
+    public static final String[] SUIT_LIST = { SUIT_CLUBS, SUIT_DIAMONDS, SUIT_HEARTS, SUIT_SPADES };
+
+    public static final Map<Integer, String> VALUE_TO_STRING_VALUE;
+    static {
+        VALUE_TO_STRING_VALUE = new HashMap<Integer, String>();
+        VALUE_TO_STRING_VALUE.put(1, "Ace");
+        VALUE_TO_STRING_VALUE.put(11, "Jack");
+        VALUE_TO_STRING_VALUE.put(12, "Queen");
+        VALUE_TO_STRING_VALUE.put(13, "King");
+    }
 
     private String suit;
     private int value;
@@ -38,6 +52,17 @@ public class Card {
 
     public void setValue(int value) {
         this.value = value;
+    }
+
+    public static String getStringValue(int val) {
+        StringBuilder sb = new StringBuilder();
+        if (val >= 2 && val <= 10) {
+            sb.append("");
+            sb.append(val);
+            return sb.toString();
+        } else {
+            return VALUE_TO_STRING_VALUE.get(new Integer(val));
+        }
     }
 
     @Override
