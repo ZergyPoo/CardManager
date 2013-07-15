@@ -23,6 +23,15 @@ public class Card {
     static {
         VALUE_TO_STRING_VALUE = new HashMap<Integer, String>();
         VALUE_TO_STRING_VALUE.put(1, "Ace");
+        VALUE_TO_STRING_VALUE.put(2, "2");
+        VALUE_TO_STRING_VALUE.put(3, "3");
+        VALUE_TO_STRING_VALUE.put(4, "4");
+        VALUE_TO_STRING_VALUE.put(5, "5");
+        VALUE_TO_STRING_VALUE.put(6, "6");
+        VALUE_TO_STRING_VALUE.put(7, "7");
+        VALUE_TO_STRING_VALUE.put(8, "8");
+        VALUE_TO_STRING_VALUE.put(9, "9");
+        VALUE_TO_STRING_VALUE.put(10, "10");
         VALUE_TO_STRING_VALUE.put(11, "Jack");
         VALUE_TO_STRING_VALUE.put(12, "Queen");
         VALUE_TO_STRING_VALUE.put(13, "King");
@@ -55,14 +64,7 @@ public class Card {
     }
 
     public static String getStringValue(int val) {
-        StringBuilder sb = new StringBuilder();
-        if (val >= 2 && val <= 10) {
-            sb.append("");
-            sb.append(val);
-            return sb.toString();
-        } else {
-            return VALUE_TO_STRING_VALUE.get(new Integer(val));
-        }
+        return VALUE_TO_STRING_VALUE.get(new Integer(val));
     }
 
     @Override
