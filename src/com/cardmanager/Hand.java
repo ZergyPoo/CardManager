@@ -28,6 +28,10 @@ public class Hand {
         return this.cards.size();
     }
 
+    public boolean containsCard(Card c) {
+        return this.cards.containsKey(c);
+    }
+
     public Collection<Card> getCards() {
         return this.cards.values();
     }
